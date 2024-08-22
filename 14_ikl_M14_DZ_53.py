@@ -15,7 +15,14 @@ import texts
 import database
 
 # делаем базовое логирование
-logging.basicConfig(level=logging.INFO)
+# logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.INFO,  # уровень логирования
+    filemode='a',  # Название файла # Режим - 'w' для перезаписи, "а" - для добавления
+    filename='bot_test.log',  # Название файла
+    encoding='utf-8',  # Кодировка
+    format='%(asctime)s | %(levelname)s | %(message)s')  # Формат вывода
+
 
 # запуск своего телеграмбота
 bot = Bot(token=API)
